@@ -1,13 +1,19 @@
 import React from "react";
 import "./App.css";
+
 import Home from "./components/Home/Home";
+import Nav from "./components/Nav/Nav";
+import Profile from "./components/Profile/Profile";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <h1>WORDIFY</h1>
-      <h2>DICTIONARY APP!</h2>
-      <Home />
+      <Nav />
+      <Switch>
+        <Route exact path="/" render={() => <Profile />} />
+        <Route exact path="/home" render={() => <Home />} />
+      </Switch>
     </div>
   );
 }
