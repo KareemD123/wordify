@@ -1,22 +1,11 @@
 import React, { Component } from "react";
 import { getWordId } from "../../services/API";
 
-export class API extends Component {
+export class Document extends Component {
   state = {
     id: "Welcome",
     definition: "Search for a word and find its definition",
     search: "",
-  };
-
-  getWordId = (e) => {
-    e.preventDefault();
-    console.log(e.target.input);
-    console.log("getWordId ran");
-    const wordSearch = "college";
-    const API_KEY = "7c0a2aa7-d004-4305-8efe-38f17184ef39";
-    const endpoint = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${wordSearch}?key=${API_KEY}`;
-
-    return fetch(endpoint, { mode: "cors" }).then((res) => res.json());
   };
 
   async componentDidMount() {
@@ -49,16 +38,6 @@ export class API extends Component {
     });
   };
 
-  handleApi = async (e) => {
-    e.preventDefault();
-    console.log("handleApi ran");
-    console.log(e.target.value);
-    const search = e.target.value;
-    let WordId = await getWordId(search);
-    console.log(WordId[0].meta.id);
-    console.log(WordId[0].shortdef);
-  };
-
   render() {
     return (
       <div>
@@ -81,4 +60,4 @@ export class API extends Component {
   }
 }
 
-export default API;
+export default Document;
