@@ -22,6 +22,7 @@ app.get("/*", function (req, res) {
 
 app.post("/*", function (req, res) {
   console.log(req.body);
+  console.log("server.js app.post function");
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 

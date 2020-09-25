@@ -17,8 +17,9 @@ class SignupForm extends Component {
     });
   };
 
-  handleSubmit = async (e) => {
+  handleSubmit = async (e, req) => {
     e.preventDefault();
+    console.log("handlesubmit function is running!");
     try {
       await userService.signup(this.state);
       // Successfully signed up - show GamePage

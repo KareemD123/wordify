@@ -9,6 +9,10 @@ const NavBar = (props) => {
         API
       </Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <Link to="/Document" className="NavBar-link">
+        My Documents
+      </Link>
+      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <Link to="" className="NavBar-link" onClick={props.handleLogout}>
         LOG OUT
       </Link>
@@ -17,6 +21,14 @@ const NavBar = (props) => {
     </div>
   ) : (
     <div>
+      <Link to="/API" className="NavBar-link">
+        API
+      </Link>
+      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <Link to="/Document" className="NavBar-link">
+        My Documents
+      </Link>
+      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <Link to="/login" className="NavBar-link">
         LOG IN
       </Link>
