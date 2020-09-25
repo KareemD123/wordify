@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { getWordId } from "../../services/API";
 
-export class Document extends Component {
+export class API extends Component {
   state = {
     id: "Welcome",
     definition: "Search for a word and find its definition",
