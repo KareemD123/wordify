@@ -22,7 +22,6 @@ app.get("/*", function (req, res) {
 
 app.post("/*", function (req, res) {
   console.log(req.body);
-  signup();
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
