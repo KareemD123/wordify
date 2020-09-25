@@ -2,11 +2,10 @@ const express = require("express");
 const path = require("path");
 const favicon = require("serve-favicon");
 const logger = require("morgan");
-require("./build/config/database");
+require("./config/database");
 const bodyParser = require("body-Parser");
-const passport = require("passport");
+// const passport = require("passport");
 const cookieSession = require("cookie-session");
-require("./build/config/passport");
 
 const app = express();
 
@@ -41,30 +40,30 @@ const isLoggedIn = (req, res, next) => {
   }
 };
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 app.get("/failed", (req, res) => res.send("You failed to log in"));
 app.get("/good", (req, res) => res.send(`Welcome ${req.user.email}`));
 
-app.get(
-  "/google",
-  passport.authenticate("google", {
-    scope: [
-      "https://www.googleapis.com/auth/plus.login",
-      ,
-      "https://www.googleapis.com/auth/plus.profile.emails.read",
-    ],
-  })
-);
+// app.get(
+//   "/google",
+//   passport.authenticate("google", {
+//     scope: [
+//       "https://www.googleapis.com/auth/plus.login",
+//       ,
+//       "https://www.googleapis.com/auth/plus.profile.emails.read",
+//     ],
+//   })
+// );
 
-app.get(
-  "/callback",
-  passport.authenticate("google", {
-    successRedirect: "/good",
-    failureRedirect: "/failed",
-  })
-);
+// app.get(
+//   "/callback",
+//   passport.authenticate("google", {
+//     successRedirect: "/good",
+//     failureRedirect: "/failed",
+//   })
+// );
 
 app.get("/logout", (req, res) => {
   req.session = null;
@@ -72,7 +71,7 @@ app.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3002;
 
 app.listen(port, function () {
   console.log(`Express app running on port ${port}`);

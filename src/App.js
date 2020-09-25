@@ -7,8 +7,8 @@ import Profile from "./components/Profile/Profile";
 import API from "./components/API/API";
 import { Route, Switch } from "react-router-dom";
 import SignupPage from "./pages/SignupPage/SignupPage";
-import LoginPage from "./pagesLoginPage/LoginPage";
-import userService from "../../services/userService";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import userService from "./services/userService";
 
 class App extends Component {
   constructor() {
@@ -30,18 +30,24 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Nav />
         <Nav user={this.state.user} handleLogout={this.handleLogout} />
         <Switch>
           <Route exact path="/" render={() => <Profile />} />
           <Route exact path="/API" render={() => <API />} />
           <Route exact path="/home" render={() => <Home />} />
-          <Route exact path="/signup" render={() => <SignupPage />} />
+          <Route
+            exact
+            path="/signup"
+            render={({ history }) => <SignupPage history={history} />}
+          />
           <Route
             exact
             path="/login"
-            render={() => (
-              <LoginPage handleSignupOrLogin={this.handleSignupOrLogin} />
+            render={({ history }) => (
+              <LoginPage
+                history={history}
+                handleSignupOrLogin={this.handleSignupOrLogin}
+              />
             )}
           />
         </Switch>
