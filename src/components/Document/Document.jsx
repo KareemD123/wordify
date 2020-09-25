@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { getWordId } from "../../services/API";
 
-export class API extends Component {
+export class Document extends Component {
   state = {
     id: "Welcome",
     definition:
@@ -81,4 +81,4 @@ export class API extends Component {
   }
 }
 
-export default API;
+export default Document;

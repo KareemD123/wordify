@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { getWordId } from "../../services/API";
 
-export class Document extends Component {
+export class API extends Component {
   state = {
     id: "Welcome",
     definition: "Search for a word and find its definition",
@@ -41,7 +41,7 @@ export class Document extends Component {
   render() {
     return (
       <div>
-        <h1>API HELLO Page</h1>
+        <h1>API Page</h1>
         <form onSubmit={this.handleSubmit}>
           <div>
             <input
@@ -60,4 +60,4 @@ export class Document extends Component {
   }
 }
 
-export default Document;
+export default API;
