@@ -6,6 +6,7 @@ require("./config/database");
 const bodyParser = require("body-Parser");
 // const passport = require("passport");
 const cookieSession = require("cookie-session");
+const signup = require("./controllers/users");
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.get("/*", function (req, res) {
 
 app.post("/*", function (req, res) {
   console.log(req.body);
+  signup();
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 

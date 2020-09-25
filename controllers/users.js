@@ -1,7 +1,6 @@
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const SECRET = process.env.SECRET;
-const bcrypt = require("bcrypt");
 
 module.exports = {
   signup,
@@ -9,6 +8,7 @@ module.exports = {
 };
 
 async function signup(req, res) {
+  console.log("this is the signup function req.body: " + req.body);
   const user = new User(req.body);
   try {
     await user.save();
