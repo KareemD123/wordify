@@ -1,9 +1,13 @@
-@font-family {
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+
+
+/* @font-family {
   font-family: "Cormorant Garamond";
-  src: url("/fonts/CormorantGaramond-Medium.tff") format("tff");
-}
+  src: url("/fonts/CormorantGaramond-Regular.tff") format("tff");
+} */
 
 body {
+  font-family: 'Cormorant Garamond', serif; 
   margin: 0;
 }
 
