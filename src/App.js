@@ -31,36 +31,34 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <section id="left-sidebar">
           <h1>Wordify</h1>
           <Nav user={this.state.user} handleLogout={this.handleLogout} />
-        </section>
-        <Switch>
-          <Route exact path="/" render={() => <Profile />} />
-          <Route exact path="/Document" render={() => <Document />} />
-          <Route exact path="/API" render={() => <API />} />
-          <Route exact path="/home" render={() => <Home />} />
-          <Route
-            exact
-            path="/signup"
-            render={({ history }) => (
-              <SignupPage
-                history={history}
-                handleSignupOrLogin={this.handleSignupOrLogin}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/login"
-            render={({ history }) => (
-              <LoginPage
-                history={history}
-                handleSignupOrLogin={this.handleSignupOrLogin}
-              />
-            )}
-          />
-        </Switch>
+          <Switch>
+            <Route exact path="/" render={() => <Profile />} />
+            <Route exact path="/Document" render={() => <Document />} />
+            <Route exact path="/API" render={() => <API />} />
+            <Route exact path="/home" render={() => <Home />} />
+            <Route
+              exact
+              path="/signup"
+              render={({ history }) => (
+                <SignupPage
+                  history={history}
+                  handleSignupOrLogin={this.handleSignupOrLogin}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/login"
+              render={({ history }) => (
+                <LoginPage
+                  history={history}
+                  handleSignupOrLogin={this.handleSignupOrLogin}
+                />
+              )}
+            />
+          </Switch>
       </div>
     );
   }
