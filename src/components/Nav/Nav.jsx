@@ -39,7 +39,7 @@ const NavBar = (props) => {
     </div>
   );
 
-  return <div className="NavBar">{nav}</div>;
+  return <nav className="NavBar">{nav}</nav>;
 };
 
 export default NavBar;

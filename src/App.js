@@ -31,7 +31,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Nav user={this.state.user} handleLogout={this.handleLogout} />
+        <section id="left-sidebar">
+          <h1>Wordify</h1>
+          <Nav user={this.state.user} handleLogout={this.handleLogout} />
+        </section>
         <Switch>
           <Route exact path="/" render={() => <Profile />} />
           <Route exact path="/Document" render={() => <Document />} />
