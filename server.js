@@ -6,7 +6,6 @@ require("./config/database");
 const bodyParser = require("body-Parser");
 // const passport = require("passport");
 const cookieSession = require("cookie-session");
-const signup = require("./controllers/users");
 
 const app = express();
 
@@ -34,19 +33,21 @@ app.use(
   })
 );
 
-const isLoggedIn = (req, res, next) => {
-  if (req.user) {
-    next();
-  } else {
-    res.sendStatus(401);
-  }
-};
+// const isLoggedIn = (req, res, next) => {
+//   if (req.user) {
+//     next();
+//   } else {
+//     res.sendStatus(401);
+//   }
+// };
 
 // app.use(passport.initialize());
 // app.use(passport.session());
 
 app.get("/failed", (req, res) => res.send("You failed to log in"));
 app.get("/good", (req, res) => res.send(`Welcome ${req.user.email}`));
+
+app.use("/api/users", require("./routes/api/users"));
 
 // app.get(
 //   "/google",
