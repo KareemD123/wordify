@@ -17,15 +17,18 @@ class SignupForm extends Component {
     });
   };
 
-  handleSubmit = async (e, req) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
     console.log("handlesubmit function is running!");
+    console.log(this.state);
+    const user = this.state;
     try {
-      await userService.signup(this.state);
+      await userService.signup(user);
       // Successfully signed up - show GamePage
       this.props.handleSignupOrLogin();
       this.props.history.push("/");
     } catch (err) {
+      console.log("i made it to the err");
       // Invalid user data (probably duplicate email)
       console.log(err);
       this.props.updateMessage(err.message);
