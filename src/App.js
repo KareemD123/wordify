@@ -10,6 +10,7 @@ import { Route, Switch } from "react-router-dom";
 import SignupPage from "./pages/SignupPage/SignupPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import userService from "./services/userService";
+import DocumentSubmissionPage from "./pages/DocumentSubmissionPage/DocumentSubmissionPage";
 
 class App extends Component {
   constructor() {

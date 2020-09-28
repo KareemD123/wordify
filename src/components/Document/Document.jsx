@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Definition from "../Definition/Definition";
 import { getWordId } from "../../services/API";
 
 export class Document extends Component {
@@ -75,7 +76,7 @@ export class Document extends Component {
           ))}
         </p>
         <h3>Word : {this.state.id}</h3>
-        <h4>Definition : {this.state.definition}</h4>
+        <Definition definition={this.state.definition}/>
       </div>
     );
   }
