@@ -3,6 +3,7 @@ import tokenService from "./tokenService";
 const BASE_URL = "/api/users/";
 
 function signup(user) {
+  console.log("I made it to the signup");
   return (
     fetch(BASE_URL + "signup", {
       method: "POST",
@@ -43,9 +44,14 @@ function login(creds) {
     .then(({ token }) => tokenService.setToken(token));
 }
 
+function test(user) {
+  console.log("this is the test function! " + user);
+}
+
 export default {
   signup,
   getUser,
   logout,
   login,
+  test,
 };
