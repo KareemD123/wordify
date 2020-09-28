@@ -22,11 +22,16 @@ class SignupForm extends Component {
     console.log("handlesubmit function is running!");
     console.log(this.state);
     const user = this.state;
+    console.log(userService.test);
     try {
+      userService.test(user);
       await userService.signup(user);
+      console.log("I passed userservince");
       // Successfully signed up - show GamePage
       this.props.handleSignupOrLogin();
+      console.log("I passed handlesignuporlogin");
       this.props.history.push("/");
+      console.log("I passed history.push");
     } catch (err) {
       console.log("i made it to the err");
       // Invalid user data (probably duplicate email)
