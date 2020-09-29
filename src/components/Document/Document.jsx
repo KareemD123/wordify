@@ -43,6 +43,7 @@ export class Document extends Component {
     });
   };
   
+  // definition component
   handleDef = async (e) => {
     e.preventDefault();
     console.log("HandleDef Ran");
@@ -61,23 +62,27 @@ export class Document extends Component {
 
   render() {
     return (
-      <div>
-        <h1>My Document</h1>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <textarea name="paragraph_text" cols="50" rows="10"></textarea>
-            <input type="submit" name="submit" />
-          </div>
-        </form>
-        <p>
-          {this.state.paragraph.map((word) => (
-            <a href="/Document" onClick={this.handleDef}>
-              {word}
-            </a>
-          ))}
-        </p>
-        <h3>Word : {this.state.id}</h3>
-        <Definition definition={this.state.definition}/>
+      <div className="container">
+        <div className="left-side">
+          <h1>My Document</h1>
+          <form onSubmit={this.handleSubmit}>
+            <div>
+              <textarea name="paragraph_text" cols="50" rows="10"></textarea>
+              <div className="btn-container"><input type="submit" name="submit" /></div>
+            </div>
+          </form>
+          <p>
+            {this.state.paragraph.map((word) => (
+              <a href="/document" onClick={this.handleDef}>
+                {word}
+              </a>
+            ))}
+          </p>
+        </div>
+        <div className="right-side">
+          <h3>Word : {this.state.id}</h3>
+          <Definition definition={this.state.definition}/>
+        </div>
       </div>
     );
   }

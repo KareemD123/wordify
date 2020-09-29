@@ -5,15 +5,15 @@ import "./Nav.css";
 const NavBar = (props) => {
   let nav = props.user ? (
     <div>
-      <Link to="/API" className="NavBar-link">
+      <Link to="/API" className="nav-link">
         API
       </Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <Link to="/Document" className="NavBar-link">
+      <Link to="/document" className="nav-link">
         My Documents
       </Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <Link to="" className="NavBar-link" onClick={props.handleLogout}>
+      <Link to="" className="nav-link" onClick={props.handleLogout}>
         LOG OUT
       </Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -21,25 +21,25 @@ const NavBar = (props) => {
     </div>
   ) : (
     <div>
-      <Link to="/API" className="NavBar-link">
+      <Link to="/API" className="nav-link">
         API
       </Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <Link to="/Document" className="NavBar-link">
+      <Link to="/document" className="nav-link">
         My Documents
       </Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <Link to="/login" className="NavBar-link">
+      <Link to="/login" className="nav-link">
         LOG IN
       </Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;
-      <Link to="/signup" className="NavBar-link">
+      <Link to="/signup" className="nav-link">
         SIGN UP
       </Link>
     </div>
   );
 
-  return <nav className="NavBar">{nav}</nav>;
+  return <nav className="nav-bar">{nav}</nav>;
 };
 
 export default NavBar;

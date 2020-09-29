@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 const Definition = (props) => (
-    <div>
+    <div className="right-side">
         {props.definition}
     </div>
 );
