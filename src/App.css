@@ -1,7 +1,19 @@
-/* .App {
+.App {
   display: flex;
   flex-direction: row;
-} */
+}
+
+.left-side {
+  margin: 10px 10px 10px 10px;
+}
+
+.middle {
+  margin: 10px 10px 10px 10px;
+}
+
+.right-side {
+  margin: 10px 10px 10px 10px;
+}
 
 .App-logo {
   height: 40vmin;
@@ -39,6 +51,8 @@ h1 {
   text-align: center;
 }
 
-.nav-bar {
+
+
+/* .nav-bar {
   text-align: center;
-}
+} */

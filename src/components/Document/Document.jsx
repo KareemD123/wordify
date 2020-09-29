@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Definition from "../Definition/Definition";
 import { getWordId } from "../../services/API";
+import "./Document.css"
 
 export class Document extends Component {
   state = {
@@ -63,7 +64,7 @@ export class Document extends Component {
   render() {
     return (
       <div className="container">
-        <div className="left-side">
+        <div className="middle">
           <h1>My Document</h1>
           <form onSubmit={this.handleSubmit}>
             <div>
@@ -73,7 +74,7 @@ export class Document extends Component {
           </form>
           <p>
             {this.state.paragraph.map((word) => (
-              <a href="/document" onClick={this.handleDef}>
+              <a href="/document" onClick={this.handleDef} className="word">
                 {word}
               </a>
             ))}

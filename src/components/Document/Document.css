@@ -1,0 +1,8 @@
+.word {
+    text-decoration: none;
+    color: black;
+  }
+  
+.word:hover {
+    text-decoration: underline;
+  }
