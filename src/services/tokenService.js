@@ -1,4 +1,5 @@
 function setToken(token) {
+  console.log("i ran set Token" + token);
   localStorage.setItem("token", token);
 }
 
