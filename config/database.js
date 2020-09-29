@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-
-process.env.DATABASE_URL = "mongodb://localhost/wordify";
+require("dotenv").config();
 
 mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
