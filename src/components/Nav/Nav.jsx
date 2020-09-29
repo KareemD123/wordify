@@ -6,36 +6,55 @@ const NavBar = (props) => {
   let nav = props.user ? (
     <div className="headline">
       <span className="title">Wordify</span>
-      <hr />
-      <h3 className="NavBar-welcome">Welcome, {props.user.name}</h3>
+      <hr className="title-rule"/>
+      <h3 className="NavBar-welcome">Welcome, {props.user.name}.</h3>
       <div className="nav-bar">
-        <Link to="/API" className="nav-item">
-          Search
+      <Link to="/API" className="nav-link">
+        <span>–</span>
+          <span className="nav-item">Search</span>
+        <span>–</span>
         </Link>
-        <Link to="/document" className="nav-item">
-          Submit
+        <hr className="nav-rule"/>
+        <Link to="/document" className="nav-link">
+        <span>–</span>
+          <span className="nav-item">Submit</span>
+        <span>–</span>
         </Link>
-        <Link to=""  onClick={props.handleLogout} className="nav-item">
-          Log out
+        <hr className="nav-rule"/>
+        <Link to=""  onClick={props.handleLogout} className="nav-link">
+          <span>–</span>
+            <span className="nav-item">Log out</span>
+          <span>–</span>
         </Link>
       </div>
     </div>
   ) : (
     <div className="headline">
       <span className="title">Wordify</span>
-      <hr />
+      <hr className="title-rule"/>
       <div className="nav-bar">
-        <Link to="/API" className="nav-item">
-          Search
+        <Link to="/API" className="nav-link">
+        <span>–</span>
+          <span className="nav-item">Search</span>
+        <span>–</span>
         </Link>
-        <Link to="/document" className="nav-item">
-          Submit
+        <hr className="nav-rule"/>
+        <Link to="/document" className="nav-link">
+        <span>–</span>
+          <span className="nav-item">Submit</span>
+        <span>–</span>
         </Link>
-        <Link to="/login" className="nav-item">
-          Log in
+        <hr className="nav-rule"/>
+        <Link to="/login" className="nav-link">
+        <span>–</span>
+          <span className="nav-item">Log in</span>
+        <span>–</span>
         </Link>
-        <Link to="/signup" className="nav-item">
-          Sign up
+        <hr className="nav-rule"/>
+        <Link to="/signup" className="nav-link">
+        <span>–</span>
+          <span className="nav-item">Sign up</span>
+        <span>–</span>
         </Link>
       </div>
     </div>

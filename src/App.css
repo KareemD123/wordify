@@ -4,7 +4,7 @@
 }
 
 .left-side {
-  margin: 10px 10px 10px 10px;
+  margin: 10px 10px 10px 50px;
 }
 
 .middle {
@@ -12,7 +12,7 @@
 }
 
 .right-side {
-  margin: 10px 10px 10px 10px;
+  margin: 10px 50px 10px 10px;
 }
 
 .App-logo {
