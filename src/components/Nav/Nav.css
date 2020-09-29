@@ -1,5 +1,5 @@
 /* vertical nav display */
-.headline {
+/* .headline {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -15,16 +15,17 @@
 .nav-bar {
     display: flex;
     flex-direction: column;
+    width: 225px;
 }
 
 .nav-link {
     text-decoration: none;
+    text-align: center;
 }
 
 .nav-item {
     text-decoration: none;
     color: black;
-    margin: 5px;
 }
 
 .nav-item:hover {
@@ -38,30 +39,60 @@
 }
 
 .nav-rule {
-    width: 25%;
+    width: 10%;
     border: none;
     border-top: 1px solid black;
-}
+} */
 
 /* horizontal nav display */
 /* .headline {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
-    position: relative;
-}
+} */
+
+/* .nav-header {
+    position: absolute;
+} */
 
 .nav-bar {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-} */
+    display: flex;
+    flex-direction: row;
+}
 
+.welcome {
+    margin-left: 20px;
+    font-size: 1.33em;
+}
 
+/* instead of using a stylesheet, use inline styling for
+a consistent distance from the right margin */
+.nav-link {
+    text-decoration: none;
+    position: relative;
+    left: 45vw;
+    margin-left: 10px;
+}
 
+.nav-item {
+    text-decoration: none;
+    color: black;
+    font-size: 1.17em;
+}
 
+.nav-item:hover {
+    text-decoration: underline;
+}
 
-/* h1, .nav-bar {
-    font-size: 20px;
-} */
+.title-rule {
+    width: 80%;
+    border: none;
+    border-top: 1px solid black;
+}
+
+.nav-rule {
+    width: 10%;
+    border: none;
+    border-top: 1px solid black;
+}

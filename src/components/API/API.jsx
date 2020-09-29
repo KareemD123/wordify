@@ -41,20 +41,22 @@ export class API extends Component {
   render() {
     return (
       <div>
-        <h1>Search</h1>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <input
-              type="text"
-              placeholder="search"
-              name="search"
-              onChange={this.handleChange}
-            />
-            <input type="submit" name="submit" />
-          </div>
-        </form>
-        {this.state.id} <br />
-        {this.state.definition}
+        <div className="middle">
+          <span className="other-title">Search</span>
+          <form onSubmit={this.handleSubmit}>
+            <div>
+              <input
+                type="text"
+                placeholder="search"
+                name="search"
+                onChange={this.handleChange}
+              />
+              <input type="submit" name="submit" />
+            </div>
+          </form>
+          {this.state.id} <br />
+          {this.state.definition}
+        </div>
       </div>
     );
   }

@@ -64,8 +64,8 @@ export class Document extends Component {
   render() {
     return (
       <div className="container">
-        <div className="middle">
-          <h1>My Document</h1>
+        <div className="left-side">
+          <span className="other-title">My Document</span>
           <form onSubmit={this.handleSubmit}>
             <div>
               <textarea name="paragraph_text" cols="50" rows="10"></textarea>
