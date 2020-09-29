@@ -8,16 +8,19 @@ module.exports = {
 };
 
 async function signup(req, res) {
-  console.log("this is the signup function req.body: " + req.body);
+  console.log(
+    "this is the signup function req.body: " + JSON.stringify(req.body)
+  );
   const user = new User(req.body);
   try {
     await user.save();
     // TODO: Send back a JWT instead of the user
     const token = createJWT(user);
+    console.log(token);
     console.log("i made it this far!");
     res.json({ token });
   } catch (err) {
-    // Probably a duplicate email
+    console.log("this is the catch err" + err);
     res.status(400).json(err);
   }
 }
@@ -40,5 +43,6 @@ async function login(req, res) {
 }
 
 function createJWT(user) {
+  console.log("thisis the jwt secret" + SECRET);
   return jwt.sign({ user }, SECRET, { expiresIn: "24h" });
 }

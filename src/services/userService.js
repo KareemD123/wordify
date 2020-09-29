@@ -4,20 +4,28 @@ const BASE_URL = "/api/users/";
 
 function signup(user) {
   console.log("I made it to the signup");
-  return (
-    fetch(BASE_URL + "signup", {
-      method: "POST",
-      headers: new Headers({ "Content-Type": "application/json" }),
-      body: JSON.stringify(user),
-    })
-      .then((res) => {
-        if (res.ok) return res.json();
-        // Probably a duplicate email
+  return fetch(BASE_URL + "signup", {
+    method: "POST",
+    headers: new Headers({ "Content-Type": "application/json" }),
+    body: JSON.stringify(user),
+  })
+    .then(async (res) => {
+      console.log("we got a result! " + res);
+      if (res.ok) {
+        try {
+          let x = await res.json();
+          console.log(x);
+          return x;
+        } catch (err) {
+          console.log("this is the catch err" + err);
+        }
         throw new Error("Email already taken!");
-      })
-      // Parameter destructuring!
-      .then(({ token }) => tokenService.setToken(token))
-  );
+      }
+    })
+    .then(({ token }) => {
+      console.log("this is the token part of signup function" + token);
+      tokenService.setToken(token);
+    });
   // The above could have been written as
   //.then((token) => token.token);
 }
