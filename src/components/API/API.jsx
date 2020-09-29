@@ -41,7 +41,7 @@ export class API extends Component {
   render() {
     return (
       <div>
-        <h1>API Page</h1>
+        <h1>Search</h1>
         <form onSubmit={this.handleSubmit}>
           <div>
             <input

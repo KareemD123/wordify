@@ -33,7 +33,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <h1>Wordify</h1>
           <Nav user={this.state.user} handleLogout={this.handleLogout} />
           <Switch>
             <Route exact path="/" render={() => <Profile />} />
