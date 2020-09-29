@@ -24,6 +24,7 @@ export class Document extends Component {
     console.log(e.target.value);
   };
 
+  // document submission page
   handleSubmit = async (e) => {
     e.preventDefault();
     console.log("handlesubmit ran");
@@ -31,6 +32,7 @@ export class Document extends Component {
 
     const paragraph = e.target.paragraph_text.value;
     const myParagraph = `${paragraph}`;
+    // splits up submitted text
     const splitString = myParagraph.split(" ");
     for (let i = 0; i < splitString.length - 1; i++) {
       splitString[i] += " ";
@@ -40,7 +42,7 @@ export class Document extends Component {
       paragraph: splitString,
     });
   };
-
+  
   handleDef = async (e) => {
     e.preventDefault();
     console.log("HandleDef Ran");
@@ -61,7 +63,6 @@ export class Document extends Component {
     return (
       <div>
         <h1>My Document</h1>
-
         <form onSubmit={this.handleSubmit}>
           <div>
             <textarea name="paragraph_text" cols="50" rows="10"></textarea>
