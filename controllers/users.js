@@ -6,9 +6,66 @@ module.exports = {
   signup,
   login,
   savedWord,
+  vocabList,
+  savedDoc,
+  docList,
 };
 
 // make decode model and export it
+
+async function docList(req, res) {
+  console.log("i hit the DocList");
+  let token = req.headers.authorization;
+  var decoded = jwt.decode(token);
+  var decoded = jwt.decode(token, { complete: true });
+  console.log(decoded.payload.user.email);
+  const userEmail = decoded.payload.user.email;
+  const modelUser = await User.findOne({ email: userEmail });
+  let listOfDocs = modelUser.DocList;
+  console.log(listOfDocs);
+  return res.json(listOfDocs);
+}
+
+async function savedDoc(req, res) {
+  console.log("I hit the savedWord function in express");
+  console.log(JSON.stringify(req.body));
+  console.log(
+    "this is the request headers" + JSON.stringify(req.headers.authorization)
+  );
+  let token = req.headers.authorization;
+  var decoded = jwt.decode(token);
+  var decoded = jwt.decode(token, { complete: true });
+  console.log(decoded.payload.user.email);
+  const userEmail = decoded.payload.user.email;
+  const data = req.body;
+  const modelUser = await User.findOne({ email: userEmail });
+  console.log("this is the modelUser " + modelUser);
+  modelUser.DocList.push({
+    name: data.docName,
+    paragraph: data.paragraph[0],
+  });
+  modelUser.save((error) => {
+    if (error) return error;
+    return res.send();
+  });
+  console.log("this is the overall user " + modelUser);
+  console.log("this is the doclist array in users " + modelUser.DocList.name);
+
+  return res.json(req.body);
+}
+
+async function vocabList(req, res) {
+  console.log("i hit the vocabList");
+  let token = req.headers.authorization;
+  var decoded = jwt.decode(token);
+  var decoded = jwt.decode(token, { complete: true });
+  console.log(decoded.payload.user.email);
+  const userEmail = decoded.payload.user.email;
+  const modelUser = await User.findOne({ email: userEmail });
+  let listOfWords = modelUser.VocabList;
+  console.log(listOfWords);
+  return res.json(listOfWords);
+}
 
 async function savedWord(req, res) {
   console.log("I hit the savedWord function in express");

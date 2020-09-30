@@ -34,13 +34,24 @@ export class API extends Component {
     console.log(WordId[0].shortdef);
     const id = WordId[0].meta.id;
     const definition = WordId[0].shortdef;
-    let colon = id.indexOf(":");
+
     let stringId = id.toString();
-    let newId = stringId.slice(0, colon);
-    this.setState({
-      id: newId,
-      definition: definition,
-    });
+    var newId;
+    var colon;
+    if (stringId.includes(":")) {
+      colon = id.indexOf(":");
+      newId = stringId.slice(0, colon);
+      this.setState({
+        id: newId,
+        definition: definition,
+      });
+    } else {
+      console.log("word doesnt have a colon");
+      this.setState({
+        id: id,
+        definition: definition,
+      });
+    }
   };
 
   handleSave = (e) => {

@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 
-export class VocabList extends Component {
+export class MyDocuments extends Component {
   state = {
-    listOfWords: [],
+    listOfDocs: [],
   };
 
   componentDidMount() {
-    console.log("vocabcomponent mounted");
+    console.log("Doc List component mounted");
     let token = localStorage.getItem("token");
-    return fetch("/api/users/vocabList", {
+    return fetch("/api/users/docList", {
       method: "POST",
       headers: new Headers({
         "Content-Type": "application/json",
@@ -20,19 +20,19 @@ export class VocabList extends Component {
         console.log("we got a result! " + res);
         if (res.ok) {
           try {
-            let listOfWords = await res.json();
-            console.log(listOfWords);
+            let listOfDocs = await res.json();
+            console.log(listOfDocs);
             this.setState({
-              listOfWords: listOfWords,
+              listOfDocs: listOfDocs,
             });
-            return listOfWords;
+            return listOfDocs;
           } catch (err) {
             console.log("this is the catch err" + err);
           }
           throw new Error("Email already taken!");
         }
       })
-      .then(() => console.log(this.state.listOfWords[0].name))
+      .then(() => console.log(this.state.listOfDocs[0].name))
       .catch((error) => console.log(error));
   }
 
@@ -44,15 +44,17 @@ export class VocabList extends Component {
   render() {
     return (
       <div>
-        <h1>This is my VocabList</h1>
+        <h1>This is my DocList</h1>
         <p>Tada here are your list of words</p>
-        {/* {this.state.listOfWords[0].name} */}
+        {/* {this.state.listOfDocs[0].name} */}
 
         <ul>
-          {this.state.listOfWords.map((word) => (
+          {this.state.listOfDocs.map((word) => (
             <li>
               <a href="" onClick={this.showDef} className="word">
                 {word.name}
+                <br />
+                {word.paragraph}
               </a>
             </li>
           ))}
@@ -62,4 +64,4 @@ export class VocabList extends Component {
   }
 }
 
-export default VocabList;
+export default MyDocuments;
