@@ -8,12 +8,23 @@ module.exports = {
   savedWord,
 };
 
+// make decode model and export it
+
 async function savedWord(req, res) {
   console.log("I hit the savedWord function in express");
   console.log(JSON.stringify(req.body));
+  console.log(
+    "this is the request headers" + JSON.stringify(req.headers.authorization)
+  );
+  let token = req.headers.authorization;
+  var decoded = jwt.decode(token);
+  var decoded = jwt.decode(token, { complete: true });
+  console.log(decoded.payload.user.email);
+  const userEmail = decoded.payload.user.email;
   // const doc = await User.findOne({ email: "kareem_draz@hotmail.com" });
+
   const data = req.body;
-  const modelUser = await User.findOne({ email: "kareem_draz@hotmail.com" });
+  const modelUser = await User.findOne({ email: userEmail });
   console.log("this is the modelUser " + modelUser);
   modelUser.VocabList.push({ name: data.id, definition: data.definition[0] });
   // modelUser.VocabList[0].name = data.id;
