@@ -34,8 +34,11 @@ export class API extends Component {
     console.log(WordId[0].shortdef);
     const id = WordId[0].meta.id;
     const definition = WordId[0].shortdef;
+    let colon = id.indexOf(":");
+    let stringId = id.toString();
+    let newId = stringId.slice(0, colon);
     this.setState({
-      id: id,
+      id: newId,
       definition: definition,
     });
   };
