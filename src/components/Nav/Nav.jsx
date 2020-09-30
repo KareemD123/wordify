@@ -8,13 +8,13 @@ const NavBar = (props) => {
       <span className="title">Wordify</span>
       <span className="welcome">Welcome, {props.user.name}.</span>
       <Link to="/" className="nav-link">
-        <span className="nav-item">My Vocabulary List</span>
+        <span className="nav-item">My vocabulary list</span>
       </Link>
       <Link to="/API" className="nav-link">
-        <span className="nav-item">Search</span>
+        <span className="nav-item">Search for a word</span>
       </Link>
       <Link to="/document" className="nav-link">
-        <span className="nav-item">Submit</span>
+        <span className="nav-item">Submit a passage</span>
       </Link>
       <Link to="" onClick={props.handleLogout} className="nav-link">
         <span className="nav-item">Log out</span>
@@ -24,14 +24,17 @@ const NavBar = (props) => {
     <div className="nav-header">
       <span className="title">Wordify</span>
       <Link to="/API" className="nav-link">
-        <span className="nav-item">Search</span>
+        <span className="nav-item">Search for a word</span>
       </Link>
+      <span>||</span>
       <Link to="/document" className="nav-link">
-        <span className="nav-item">Submit</span>
+        <span className="nav-item">Submit a passage</span>
       </Link>
+      <span>||</span>
       <Link to="/login" className="nav-link">
         <span className="nav-item">Log in</span>
       </Link>
+      <span>||</span>
       <Link to="/signup" className="nav-link">
         <span className="nav-item">Sign up</span>
       </Link>
