@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { getWordId } from "../../services/API";
+import storageService from "../../services/storageService";
 
 export class API extends Component {
   state = {
@@ -29,6 +30,7 @@ export class API extends Component {
     const search = e.target.search.value;
     let WordId = await getWordId(search);
     console.log(WordId[0].meta.id);
+    console.log(WordId[0]);
     console.log(WordId[0].shortdef);
     const id = WordId[0].meta.id;
     const definition = WordId[0].shortdef;
@@ -36,6 +38,13 @@ export class API extends Component {
       id: id,
       definition: definition,
     });
+  };
+
+  handleSave = (e) => {
+    console.log("I ran handleSave");
+    console.log(this.state.id);
+    const savedWord = this.state;
+    storageService.save(savedWord);
   };
 
   render() {
@@ -55,6 +64,7 @@ export class API extends Component {
             </div>
           </form>
           {this.state.id} <br />
+          <button onClick={this.handleSave}>Save</button>
           {this.state.definition}
         </div>
       </div>

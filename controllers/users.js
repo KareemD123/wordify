@@ -5,7 +5,19 @@ const SECRET = process.env.SECRET;
 module.exports = {
   signup,
   login,
+  savedWord,
 };
+
+async function savedWord(req, res) {
+  console.log("I hit the savedWord function in express");
+  console.log(JSON.stringify(req.body));
+  const doc = await User.findOne({ email: "kareem_draz@hotmail.com" });
+  await doc.save({ VocabList: `${req.body}` });
+
+  const savedWord = new User(req.body);
+  savedWord.save();
+  return res.json(req.body);
+}
 
 async function signup(req, res) {
   console.log(

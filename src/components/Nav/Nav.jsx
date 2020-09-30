@@ -4,35 +4,38 @@ import "./Nav.css";
 
 const NavBar = (props) => {
   let nav = props.user ? (
-      <div className="nav-header">
-        <span className="title">Wordify</span>
-        <span className="welcome">Welcome, {props.user.name}.</span>
-        <Link to="/API" className="nav-link">
-            <span className="nav-item">Search</span>
-        </Link>
-        <Link to="/document" className="nav-link">
-            <span className="nav-item">Submit</span>
-        </Link>
-        <Link to=""  onClick={props.handleLogout} className="nav-link">
-            <span className="nav-item">Log out</span>
-        </Link>
-      </div>
+    <div className="nav-header">
+      <span className="title">Wordify</span>
+      <span className="welcome">Welcome, {props.user.name}.</span>
+      <Link to="/" className="nav-link">
+        <span className="nav-item">My Vocabulary List</span>
+      </Link>
+      <Link to="/API" className="nav-link">
+        <span className="nav-item">Search</span>
+      </Link>
+      <Link to="/document" className="nav-link">
+        <span className="nav-item">Submit</span>
+      </Link>
+      <Link to="" onClick={props.handleLogout} className="nav-link">
+        <span className="nav-item">Log out</span>
+      </Link>
+    </div>
   ) : (
-      <div className="nav-header">
-        <span className="title">Wordify</span>
-        <Link to="/API" className="nav-link">
-          <span className="nav-item">Search</span>
-        </Link>
-        <Link to="/document" className="nav-link">
-          <span className="nav-item">Submit</span>
-        </Link>
-        <Link to="/login" className="nav-link">
-          <span className="nav-item">Log in</span>
-        </Link>
-        <Link to="/signup" className="nav-link">
-          <span className="nav-item">Sign up</span>
-        </Link>
-      </div>
+    <div className="nav-header">
+      <span className="title">Wordify</span>
+      <Link to="/API" className="nav-link">
+        <span className="nav-item">Search</span>
+      </Link>
+      <Link to="/document" className="nav-link">
+        <span className="nav-item">Submit</span>
+      </Link>
+      <Link to="/login" className="nav-link">
+        <span className="nav-item">Log in</span>
+      </Link>
+      <Link to="/signup" className="nav-link">
+        <span className="nav-item">Sign up</span>
+      </Link>
+    </div>
   );
 
   return <nav className="app-header">{nav}</nav>;
