@@ -11,11 +11,34 @@ module.exports = {
 async function savedWord(req, res) {
   console.log("I hit the savedWord function in express");
   console.log(JSON.stringify(req.body));
-  const doc = await User.findOne({ email: "kareem_draz@hotmail.com" });
-  await doc.save({ VocabList: `${req.body}` });
-
-  const savedWord = new User(req.body);
-  savedWord.save();
+  // const doc = await User.findOne({ email: "kareem_draz@hotmail.com" });
+  const data = req.body;
+  const modelUser = await User.findOne({ email: "kareem_draz@hotmail.com" });
+  console.log("this is the modelUser " + modelUser);
+  modelUser.VocabList.push({ name: data.id, definition: data.definition[0] });
+  // modelUser.VocabList[0].name = data.id;
+  // modelUser.VocabList[0].definition = data.definition[0];
+  // modelUser.VocabList[1].name = data.id;
+  // modelUser.VocabList[1].definition = data.definition[0];
+  modelUser.save((error) => {
+    if (error) return error;
+    return res.send();
+  });
+  console.log("this is the overall user " + modelUser);
+  console.log(
+    "this is the vocablist array in users " + modelUser.VocabList[0].name
+  );
+  // const newVocabWord = new User(data);
+  // newVocabWord.save((error) => {
+  //   if (error) {
+  //     console.log(error);
+  //     res.status(500).json({ msg: "There was an error saving your data" });
+  //   } else {
+  //     res.json({
+  //       msg: "Data was saved",
+  //     });
+  //   }
+  // });
   return res.json(req.body);
 }
 
