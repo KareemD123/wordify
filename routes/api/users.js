@@ -6,6 +6,9 @@ const usersCtrl = require("../../controllers/users");
 router.post("/signup", usersCtrl.signup);
 router.post("/login", usersCtrl.login);
 router.post("/savedWord", usersCtrl.savedWord);
+router.post("/savedDoc", usersCtrl.savedDoc);
+router.post("/vocabList", usersCtrl.vocabList);
+router.post("/docList", usersCtrl.docList);
 
 /*---------- Protected Routes ----------*/
 

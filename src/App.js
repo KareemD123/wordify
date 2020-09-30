@@ -9,6 +9,7 @@ import API from "./components/API/API";
 import { Route, Switch } from "react-router-dom";
 import SignupPage from "./pages/SignupPage/SignupPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import MyDocuments from "./components/MyDocuments/MyDocuments";
 import userService from "./services/userService";
 import DocumentSubmissionPage from "./pages/DocumentSubmissionPage/DocumentSubmissionPage";
 
@@ -36,6 +37,7 @@ class App extends Component {
         <Nav user={this.state.user} handleLogout={this.handleLogout} />
         <Switch>
           <Route exact path="/" render={() => <VocabList />} />
+          <Route exact path="/MyDocuments" render={() => <MyDocuments />} />
           <Route exact path="/Document" render={() => <Document />} />
           <Route exact path="/API" render={() => <API />} />
           <Route exact path="/home" render={() => <Home />} />

@@ -10,6 +10,9 @@ const NavBar = (props) => {
       <Link to="/" className="nav-link">
         <span className="nav-item">My vocabulary list</span>
       </Link>
+      <Link to="/MyDocuments" className="nav-link">
+        <span className="nav-item">My Documents</span>
+      </Link>
       <Link to="/API" className="nav-link">
         <span className="nav-item">Search for a word</span>
       </Link>

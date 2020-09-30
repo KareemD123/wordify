@@ -8,12 +8,18 @@ const VocabListSchema = new mongoose.Schema({
   definition: String,
 });
 
+const DocListSchema = new mongoose.Schema({
+  name: String,
+  paragraph: String,
+});
+
 const userSchema = new mongoose.Schema(
   {
     name: String,
     email: { type: String, lowercase: true, unique: true },
     password: String,
     VocabList: [VocabListSchema],
+    DocList: [DocListSchema],
   },
   {
     timestamps: true,
