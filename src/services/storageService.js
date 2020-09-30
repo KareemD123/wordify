@@ -1,11 +1,17 @@
 const BASE_URL = "/api/users/";
 
 function save(savedWord) {
+  console.log(localStorage);
+  let token = localStorage.getItem("token");
+  console.log(token);
   console.log("I made it to the storage service");
   console.log(savedWord);
   return fetch(BASE_URL + "savedWord", {
     method: "POST",
-    headers: new Headers({ "Content-Type": "application/json" }),
+    headers: new Headers({
+      "Content-Type": "application/json",
+      Authorization: token,
+    }),
     body: JSON.stringify(savedWord),
   })
     .then((res) => {
