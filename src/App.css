@@ -1,6 +1,26 @@
 .App {
   display: flex;
   flex-direction: column;
+  /* background-color: #D3BDB0; */
+  background: linear-gradient(90deg, #D3BDB0, #C4A797);
+  color: #271C16;
+}
+
+textarea, button, input {
+  outline: none;
+  border: none;
+  margin-top: 5px;
+}
+
+textarea {
+  padding: 8px 14px 8px 14px;
+  border-radius: 10px;
+  resize: none;
+}
+
+button, input {
+  padding: 4px;
+  border-radius: 5px;
 }
 
 .title {

@@ -78,7 +78,7 @@ a consistent distance from the right margin */
 
 .nav-item {
     text-decoration: none;
-    color: black;
+    color: #271C16;
     font-size: 1.17em;
 }
 
@@ -89,11 +89,11 @@ a consistent distance from the right margin */
 .title-rule {
     width: 80%;
     border: none;
-    border-top: 1px solid black;
+    border-top: 1px solid #271C16;
 }
 
 .nav-rule {
     width: 10%;
     border: none;
-    border-top: 1px solid black;
+    border-top: 1px solid #271C16;
 }
