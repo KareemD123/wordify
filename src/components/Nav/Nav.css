@@ -70,9 +70,10 @@
 a consistent distance from the right margin */
 .nav-link {
     text-decoration: none;
-    position: relative;
-    left: 15vw;
+    /* position: relative;
+    left: 15vw; */
     margin-left: 10px;
+    margin-right: 10px;
 }
 
 .nav-item {
