@@ -1,7 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+body {
+  font-family: 'Lora', serif;
+  background-color: #D3BDB0;
+  /* background: linear-gradient(45deg, #D3BDB0, #C4A797); */
+}
+
+/* App at 1024px width */
+@media screen and (min-width: 1024px) {
+
+}
+
 .App {
   display: flex;
   flex-direction: column;
+  color: #271C16;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
 }
+
+
 
 .title {
   font-size: 50px;
@@ -20,6 +41,7 @@
   flex-direction: row;
 }
 
+/* app margins */
 .app-header {
   margin: 5px 10px 10px 50px;
 }
@@ -41,17 +63,6 @@
   font-weight: bold;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 /* .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -70,7 +81,7 @@
 .container {
   display: flex;
   flex-direction: row;
-  justify-content: right;
+  justify-content: space-between;
 }
 
 
@@ -78,3 +89,40 @@
 /* .nav-bar {
   text-align: center;
 } */
+
+/* buttons and inputs */
+textarea, button, input {
+  outline: none;
+  margin-top: 5px;
+  font-family: lora
+}
+
+textarea {
+  padding: 8px 14px 8px 14px;
+  border: none;
+  border-radius: 10px;
+  resize: none;
+}
+
+button, input {
+  padding: 4px;
+  border-radius: 5px;
+  font-family: 'Lora', 'Serif';
+}
+
+.title-input {
+  background-color: #B1C6D3;
+  border: 1px solid #8DACBF;
+  margin-right: 4px;
+}
+
+.submit-save {
+  background-color: #BDB1D3;
+  display: inline-block;
+  border: 1px solid #9F8DBF;
+  margin-right: 4px;
+}
+
+.submit-save:hover {
+  background-color: #C1B6D6;
+}

@@ -69,16 +69,17 @@ export class API extends Component {
           <form onSubmit={this.handleSubmit}>
             <div>
               <input
+                className="title-input"
                 type="text"
                 placeholder="search"
                 name="search"
                 onChange={this.handleChange}
               />
-              <input type="submit" name="submit" />
+              <input type="submit" name="submit" className="submit-save"/>
             </div>
           </form>
           {this.state.id} <br />
-          <button onClick={this.handleSave}>Save</button>
+          <button onClick={this.handleSave} className="save">Save</button>
           {this.state.definition}
         </div>
       </div>

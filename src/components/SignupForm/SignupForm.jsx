@@ -57,7 +57,7 @@ class SignupForm extends Component {
             <div className="col-sm-12">
               <input
                 type="text"
-                className="form-control"
+                className="form-control title-input"
                 placeholder="Name"
                 value={this.state.name}
                 name="name"
@@ -69,7 +69,7 @@ class SignupForm extends Component {
             <div className="col-sm-12">
               <input
                 type="email"
-                className="form-control"
+                className="form-control title-input"
                 placeholder="Email"
                 value={this.state.email}
                 name="email"
@@ -81,7 +81,7 @@ class SignupForm extends Component {
             <div className="col-sm-12">
               <input
                 type="password"
-                className="form-control"
+                className="form-control title-input"
                 placeholder="Password"
                 value={this.state.password}
                 name="password"
@@ -93,7 +93,7 @@ class SignupForm extends Component {
             <div className="col-sm-12">
               <input
                 type="password"
-                className="form-control"
+                className="form-control title-input"
                 placeholder="Confirm Password"
                 value={this.state.passwordConf}
                 name="passwordConf"
@@ -104,7 +104,7 @@ class SignupForm extends Component {
           <div className="form-group">
             <div className="col-sm-12 text-center">
               <button
-                className="btn btn-default"
+                className="btn btn-default submit-save"
                 disabled={this.isFormInvalid()}
               >
                 Sign Up

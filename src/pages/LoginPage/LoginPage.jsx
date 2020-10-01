@@ -37,7 +37,7 @@ class LoginPage extends Component {
             <div className="col-sm-12">
               <input
                 type="email"
-                className="form-control"
+                className="form-control title-input"
                 placeholder="Email"
                 value={this.state.email}
                 name="email"
@@ -49,7 +49,7 @@ class LoginPage extends Component {
             <div className="col-sm-12">
               <input
                 type="password"
-                className="form-control"
+                className="form-control title-input"
                 placeholder="Password"
                 value={this.state.pw}
                 name="pw"
@@ -59,8 +59,7 @@ class LoginPage extends Component {
           </div>
           <div className="form-group">
             <div className="col-sm-12 text-center">
-              <button className="btn btn-default">Log In</button>
-              &nbsp;&nbsp;&nbsp;
+              <button className="submit-save">Log In</button>
               <Link to="/">Cancel</Link>
             </div>
           </div>
