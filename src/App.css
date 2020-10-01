@@ -1,12 +1,23 @@
+body {
+  background: linear-gradient(180deg, #D3BDB0, #C4A797);
+}
+/* App at 1024px width */
+@media screen and (min-width: 1024px) {
+
+}
+
 .App {
   display: flex;
   flex-direction: column;
-  /* background-color: #D3BDB0; */
-  background: linear-gradient(90deg, #D3BDB0, #C4A797);
-  background-size: cover;
-  min-width: 1024px;
+  background-color: #D3BDB0;
+  /* background: linear-gradient(90deg, #D3BDB0, #C4A797); */
+  /* background-size: cover;
   min-height: 800px;
-  color: #271C16;
+  color: #271C16; */
+}
+
+.App-container {
+  
 }
 
 textarea, button, input {
