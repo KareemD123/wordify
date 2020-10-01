@@ -77,34 +77,38 @@ export class Document extends Component {
     return (
       <div className="container">
         <div className="left-side">
-          <span className="other-title">My Document</span>
-          <form onSubmit={this.handleSubmit}>
-            <input
-              type="text"
-              className="title-input"
-              placeholder="Name your passage"
-              name="name"
-              onChange={this.handleChange}
-            />
-            <div>
-              <textarea name="paragraph_text" cols="50" rows="10"></textarea>
-              <div className="btn-container">
-                <input type="submit" name="submit" className="submit-save" />
-                <button onClick={this.handleSave} className="submit-save">Save</button>
+          <div className="form-container">
+            <span className="other-title">My Document</span>
+            <form onSubmit={this.handleSubmit}>
+              <input
+                type="text"
+                className="title-input"
+                placeholder="Name your passage"
+                name="name"
+                onChange={this.handleChange}
+              />
+              <div>
+                <textarea name="paragraph_text" cols="50" rows="10"></textarea>
+                <div className="btn-container">
+                  <input type="submit" name="submit" className="submit-save" />
+                  <button onClick={this.handleSave} className="submit-save">Save</button>
+                </div>
               </div>
-            </div>
-          </form>
-          <p>
-            {this.state.paragraph.map((word) => (
-              <a href="/document" onClick={this.handleDef} className="word">
-                {word}
-              </a>
-            ))}
-          </p>
+            </form>
+            <p>
+              {this.state.paragraph.map((word) => (
+                <a href="/document" onClick={this.handleDef} className="word">
+                  {word}
+                </a>
+              ))}
+            </p>
+          </div>
         </div>
         <div className="right-side">
-          <h3>Word : {this.state.id}</h3>
-          <Definition definition={this.state.definition} />
+          <div className="def-container">
+            <span>{this.state.id}</span>
+            <Definition definition={this.state.definition} />
+          </div>
         </div>
       </div>
     );

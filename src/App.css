@@ -126,7 +126,8 @@ textarea, button, input {
 }
 
 textarea {
-  padding: 8px 14px 8px 14px;
+  max-width: 90%;
+  padding: 0.5em 0.7em 0.5em 0.7em;
   border: none;
   border-radius: 10px;
   resize: none;
