@@ -1,8 +1,11 @@
 import React, { Component } from "react";
+import storageService from "../../services/storageService";
 
 export class VocabList extends Component {
   state = {
     listOfWords: [],
+    matchedDef: "",
+    displayDef: false,
   };
 
   componentDidMount() {
@@ -38,7 +41,43 @@ export class VocabList extends Component {
 
   showDef = (e) => {
     e.preventDefault();
+    this.setState({
+      displayDef: !this.state.displayDef,
+    });
+    let listOfWords = this.state.listOfWords;
+    console.log(listOfWords);
     console.log(e.target.text);
+    var matchedDef;
+    for (let i = 0; i < this.state.listOfWords.length; i++) {
+      if (e.target.text == listOfWords[i].name) {
+        console.log("We matched! " + listOfWords[i].name);
+        console.log("We matched! " + listOfWords[i].definition);
+        matchedDef = listOfWords[i].definition;
+        this.setState({
+          matchedDef: matchedDef,
+        });
+      }
+    }
+  };
+
+  handleDelete = (e) => {
+    console.log("I ran handleDelete");
+    console.log(e.target.value);
+    var matchedName;
+    let listOfWords = this.state.listOfWords;
+    for (let i = 0; i < this.state.listOfWords.length; i++) {
+      if (e.target.value === listOfWords[i].name) {
+        console.log("We matched! " + listOfWords[i].name);
+        console.log("We matched! " + listOfWords[i].definition);
+        matchedName = {
+          id: listOfWords[i].name,
+          definition: listOfWords[i].definition,
+        };
+      }
+    }
+    const savedWord = matchedName;
+    storageService.deleteWord(savedWord);
+    this.componentDidMount();
   };
 
   render() {
@@ -54,9 +93,18 @@ export class VocabList extends Component {
               <a href="" onClick={this.showDef} className="word">
                 {word.name}
               </a>
+              <button
+                type="Submit"
+                value={word.name}
+                onClick={this.handleDelete}
+                className="submit-save"
+              >
+                Delete
+              </button>
             </li>
           ))}
         </ul>
+        {this.state.matchedDef}
       </div>
     );
   }
