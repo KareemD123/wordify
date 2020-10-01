@@ -81,6 +81,7 @@ export class Document extends Component {
           <form onSubmit={this.handleSubmit}>
             <input
               type="text"
+              className="title-input"
               placeholder="Name your passage"
               name="name"
               onChange={this.handleChange}
@@ -88,11 +89,11 @@ export class Document extends Component {
             <div>
               <textarea name="paragraph_text" cols="50" rows="10"></textarea>
               <div className="btn-container">
-                <input type="submit" name="submit" />
+                <input type="submit" name="submit" className="submit" />
+                <button onClick={this.handleSave} className="save">Save</button>
               </div>
             </div>
           </form>
-          <button onClick={this.handleSave}>Save</button>
           <p>
             {this.state.paragraph.map((word) => (
               <a href="/document" onClick={this.handleDef} className="word">

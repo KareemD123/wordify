@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
 body {
-  background: linear-gradient(180deg, #D3BDB0, #C4A797);
+  font-family: 'Lora', serif;
+  background-color: #D3BDB0;
+  padding-left: 50px;
+  padding-right: 50px;
+  /* background: linear-gradient(45deg, #D3BDB0, #C4A797); */
 }
+
 /* App at 1024px width */
 @media screen and (min-width: 1024px) {
 
@@ -9,33 +16,10 @@ body {
 .App {
   display: flex;
   flex-direction: column;
-  background-color: #D3BDB0;
-  /* background: linear-gradient(90deg, #D3BDB0, #C4A797); */
-  /* background-size: cover;
-  min-height: 800px;
-  color: #271C16; */
+  color: #271C16;
 }
 
-.App-container {
-  
-}
 
-textarea, button, input {
-  outline: none;
-  border: none;
-  margin-top: 5px;
-}
-
-textarea {
-  padding: 8px 14px 8px 14px;
-  border-radius: 10px;
-  resize: none;
-}
-
-button, input {
-  padding: 4px;
-  border-radius: 5px;
-}
 
 .title {
   font-size: 50px;
@@ -54,6 +38,7 @@ button, input {
   flex-direction: row;
 }
 
+/* app margins */
 .app-header {
   margin: 5px 10px 10px 50px;
 }
@@ -75,17 +60,6 @@ button, input {
   font-weight: bold;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 /* .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -104,7 +78,7 @@ button, input {
 .container {
   display: flex;
   flex-direction: row;
-  justify-content: right;
+  justify-content: space-between;
 }
 
 
@@ -112,3 +86,52 @@ button, input {
 /* .nav-bar {
   text-align: center;
 } */
+
+/* buttons and inputs */
+textarea, button, input {
+  outline: none;
+  margin-top: 5px;
+  font-family: lora
+}
+
+textarea {
+  padding: 8px 14px 8px 14px;
+  border: 1px solid #ACBF8D;
+  border-radius: 10px;
+  resize: none;
+  background-color: #C6D3B1;
+}
+
+button, input {
+  padding: 4px;
+  border-radius: 5px;
+  font-family: 'Lora', 'Serif';
+}
+
+.title-input {
+  background-color: #B1C6D3;
+  border: 1px solid #8DACBF;
+  margin-right: 4px;
+}
+
+.submit {
+  background-color: #BDB1D3;
+  display: inline-block;
+  border: 1px solid #9F8DBF;
+  margin-right: 4px;
+}
+
+.save {
+  background-color: #BDB1D3;
+  display: inline-block;
+  border: 1px solid #9F8DBF;
+}
+
+.save:hover {
+  background-color: #C1B6D6;
+}
+
+.submit:hover {
+  background-color: #C1B6D6;
+}
+
