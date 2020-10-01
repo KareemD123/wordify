@@ -44,7 +44,7 @@ export class MyDocuments extends Component {
   render() {
     return (
       <div>
-        <h1>This is my DocList</h1>
+        <span className="title">Documents</span>
         <p>Tada here are your list of words</p>
         {/* {this.state.listOfDocs[0].name} */}
 

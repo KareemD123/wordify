@@ -59,6 +59,8 @@
 .nav-bar {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0.15em;
 }
 
 .welcome {
@@ -72,8 +74,8 @@ a consistent distance from the right margin */
     text-decoration: none;
     /* position: relative;
     left: 15vw; */
-    margin-left: 10px;
-    margin-right: 10px;
+    /* margin-left: 0.1em;
+    margin-right: 0.1em; */
 }
 
 .nav-item {
@@ -87,7 +89,7 @@ a consistent distance from the right margin */
 }
 
 .title-rule {
-    width: 80%;
+    width: 100%;
     border: none;
     border-top: 1px solid #271C16;
 }

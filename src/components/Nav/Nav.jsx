@@ -5,46 +5,52 @@ import "./Nav.css";
 const NavBar = (props) => {
   let nav = props.user ? (
     <div className="nav-header">
-      <span className="title">Wordify</span>
-      <span className="welcome">Welcome, {props.user.name}.</span>
-      <Link to="/" className="nav-link">
-        <span className="nav-item">My vocabulary list</span>
-      </Link>
-      <span>&#167;</span>
-      <Link to="/MyDocuments" className="nav-link">
-        <span className="nav-item">My Documents</span>
-      </Link>
-      <span>&#167;</span>
-      <Link to="/API" className="nav-link">
-        <span className="nav-item">Search for a word</span>
-      </Link>
-      <span>&#167;</span>
-      <Link to="/document" className="nav-link">
-        <span className="nav-item">Submit a passage</span>
-      </Link>
-      <span>&#167;</span>
-      <Link to="" onClick={props.handleLogout} className="nav-link">
-        <span className="nav-item">Log out</span>
-      </Link>
+      <div>
+        <span className="title">Wordify</span>
+        <span className="welcome">Welcome, {props.user.name}.</span>
+        </div>
+      <hr />
+      <div className="nav-bar">
+        <Link to="/" className="nav-link">
+          <span className="nav-item">My vocabulary list</span>
+        </Link>
+        <span>&#167;</span>
+        <Link to="/MyDocuments" className="nav-link">
+          <span className="nav-item">My Documents</span>
+        </Link>
+        <span>&#167;</span>
+        <Link to="/API" className="nav-link">
+          <span className="nav-item">Search for a word</span>
+        </Link>
+        <span>&#167;</span>
+        <Link to="/document" className="nav-link">
+          <span className="nav-item">Submit a passage</span>
+        </Link>
+        <span>&#167;</span>
+        <Link to="" onClick={props.handleLogout} className="nav-link">
+          <span className="nav-item">Log out</span>
+        </Link>
+      </div>
+      <hr />
     </div>
   ) : (
     <div className="nav-header">
-      <span className="title">Wordify</span>
-      <Link to="/API" className="nav-link">
-        <span className="nav-item">Search for a word</span>
-      </Link>
-      <span>&#167;</span>
-      <Link to="/document" className="nav-link">
-        <span className="nav-item">Submit a passage</span>
-      </Link>
-      <span>&#167;</span>
-      <Link to="/login" className="nav-link">
-        <span className="nav-item">Log in</span>
-      </Link>
-      <span>&#167;</span>
-      <Link to="/signup" className="nav-link">
-        <span className="nav-item">Sign up</span>
-      </Link>
+      <div className="title">Wordify</div>
+      <hr />
+        <div className="nav-bar">
+        <Link to="/API" className="nav-link">
+          <span className="nav-item">Search for a word</span>
+        </Link>
+        <span>&#167;</span>
+        <Link to="/login" className="nav-link">
+          <span className="nav-item">Log in</span>
+        </Link>
+        <span>&#167;</span>
+        <Link to="/signup" className="nav-link">
+          <span className="nav-item">Sign up</span>
+        </Link>
+      </div>
+      <hr />
     </div>
   );
 

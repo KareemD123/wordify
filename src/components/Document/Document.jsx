@@ -58,12 +58,27 @@ export class Document extends Component {
     let WordId = await getWordId(search);
     console.log(WordId[0].meta.id);
     console.log(WordId[0].shortdef);
+
     const id = WordId[0].meta.id;
     const definition = WordId[0].shortdef;
-    this.setState({
-      id: id,
-      definition: definition,
-    });
+
+    let stringId = id.toString();
+    var newId;
+    var colon;
+    if (stringId.includes(":")) {
+      colon = id.indexOf(":");
+      newId = stringId.slice(0, colon);
+      this.setState({
+        id: newId,
+        definition: definition,
+      });
+    } else {
+      console.log("word doesnt have a colon");
+      this.setState({
+        id: id,
+        definition: definition,
+      });
+    }
   };
 
   handleSave = (e) => {
@@ -77,34 +92,38 @@ export class Document extends Component {
     return (
       <div className="container">
         <div className="left-side">
-          <span className="other-title">My Document</span>
-          <form onSubmit={this.handleSubmit}>
-            <input
-              type="text"
-              className="title-input"
-              placeholder="Name your passage"
-              name="name"
-              onChange={this.handleChange}
-            />
-            <div>
-              <textarea name="paragraph_text" cols="50" rows="10"></textarea>
-              <div className="btn-container">
-                <input type="submit" name="submit" className="submit-save" />
-                <button onClick={this.handleSave} className="submit-save">Save</button>
+          <div className="form-container">
+            <span className="other-title">My Document</span>
+            <form onSubmit={this.handleSubmit}>
+              <input
+                type="text"
+                className="title-input"
+                placeholder="Name your passage"
+                name="name"
+                onChange={this.handleChange}
+              />
+              <div>
+                <textarea name="paragraph_text" cols="50" rows="10"></textarea>
+                <div className="btn-container">
+                  <input type="submit" name="submit" className="submit-save" />
+                  <button onClick={this.handleSave} className="submit-save">Save</button>
+                </div>
               </div>
-            </div>
-          </form>
-          <p>
-            {this.state.paragraph.map((word) => (
-              <a href="/document" onClick={this.handleDef} className="word">
-                {word}
-              </a>
-            ))}
-          </p>
+            </form>
+            <p>
+              {this.state.paragraph.map((word) => (
+                <a href="/document" onClick={this.handleDef} className="word">
+                  {word}
+                </a>
+              ))}
+            </p>
+          </div>
         </div>
         <div className="right-side">
-          <h3>Word : {this.state.id}</h3>
-          <Definition definition={this.state.definition} />
+          <div className="def-container">
+            <span>{this.state.id}</span>
+            <Definition definition={this.state.definition} />
+          </div>
         </div>
       </div>
     );
