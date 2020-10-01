@@ -89,8 +89,8 @@ export class Document extends Component {
             <div>
               <textarea name="paragraph_text" cols="50" rows="10"></textarea>
               <div className="btn-container">
-                <input type="submit" name="submit" className="submit" />
-                <button onClick={this.handleSave} className="save">Save</button>
+                <input type="submit" name="submit" className="submit-save" />
+                <button onClick={this.handleSave} className="submit-save">Save</button>
               </div>
             </div>
           </form>

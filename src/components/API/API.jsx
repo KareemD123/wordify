@@ -75,7 +75,7 @@ export class API extends Component {
                 name="search"
                 onChange={this.handleChange}
               />
-              <input type="submit" name="submit" className="submit"/>
+              <input type="submit" name="submit" className="submit-save"/>
             </div>
           </form>
           {this.state.id} <br />

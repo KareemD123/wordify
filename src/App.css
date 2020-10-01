@@ -3,8 +3,6 @@
 body {
   font-family: 'Lora', serif;
   background-color: #D3BDB0;
-  padding-left: 50px;
-  padding-right: 50px;
   /* background: linear-gradient(45deg, #D3BDB0, #C4A797); */
 }
 
@@ -17,6 +15,11 @@ body {
   display: flex;
   flex-direction: column;
   color: #271C16;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 
@@ -96,10 +99,9 @@ textarea, button, input {
 
 textarea {
   padding: 8px 14px 8px 14px;
-  border: 1px solid #ACBF8D;
+  border: none;
   border-radius: 10px;
   resize: none;
-  background-color: #C6D3B1;
 }
 
 button, input {
@@ -114,24 +116,13 @@ button, input {
   margin-right: 4px;
 }
 
-.submit {
+.submit-save {
   background-color: #BDB1D3;
   display: inline-block;
   border: 1px solid #9F8DBF;
   margin-right: 4px;
 }
 
-.save {
-  background-color: #BDB1D3;
-  display: inline-block;
-  border: 1px solid #9F8DBF;
-}
-
-.save:hover {
+.submit-save:hover {
   background-color: #C1B6D6;
 }
-
-.submit:hover {
-  background-color: #C1B6D6;
-}
-
