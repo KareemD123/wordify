@@ -3,6 +3,9 @@
   flex-direction: column;
   /* background-color: #D3BDB0; */
   background: linear-gradient(90deg, #D3BDB0, #C4A797);
+  background-size: cover;
+  min-width: 1024px;
+  min-height: 800px;
   color: #271C16;
 }
 
