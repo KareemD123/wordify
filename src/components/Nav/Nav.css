@@ -59,7 +59,7 @@
 .nav-bar {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 0.15em;
 }
 
@@ -74,8 +74,8 @@ a consistent distance from the right margin */
     text-decoration: none;
     /* position: relative;
     left: 15vw; */
-    margin-left: 0.1em;
-    margin-right: 0.1em;
+    /* margin-left: 0.1em;
+    margin-right: 0.1em; */
 }
 
 .nav-item {

@@ -58,12 +58,27 @@ export class Document extends Component {
     let WordId = await getWordId(search);
     console.log(WordId[0].meta.id);
     console.log(WordId[0].shortdef);
+
     const id = WordId[0].meta.id;
     const definition = WordId[0].shortdef;
-    this.setState({
-      id: id,
-      definition: definition,
-    });
+
+    let stringId = id.toString();
+    var newId;
+    var colon;
+    if (stringId.includes(":")) {
+      colon = id.indexOf(":");
+      newId = stringId.slice(0, colon);
+      this.setState({
+        id: newId,
+        definition: definition,
+      });
+    } else {
+      console.log("word doesnt have a colon");
+      this.setState({
+        id: id,
+        definition: definition,
+      });
+    }
   };
 
   handleSave = (e) => {
