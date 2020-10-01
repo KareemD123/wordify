@@ -79,7 +79,7 @@ export class API extends Component {
             </div>
           </form>
           {this.state.id} <br />
-          <button onClick={this.handleSave} className="save">Save</button>
+          <button onClick={this.handleSave} className="submit-save">Save</button>
           {this.state.definition}
         </div>
       </div>
