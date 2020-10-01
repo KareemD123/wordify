@@ -11,6 +11,7 @@ export class Document extends Component {
       "Copy and Paste an excerpt that you would like to find the definition of words in",
     search: "",
     paragraph: [],
+    textparagraph: "",
     docName: "",
   };
 
@@ -34,7 +35,9 @@ export class Document extends Component {
     console.log(e.target.name.value);
     const name = e.target.name.value;
     console.log(e.target.paragraph_text.value);
-
+    this.setState({
+      textparagraph: e.target.paragraph_text.value,
+    });
     const paragraph = e.target.paragraph_text.value;
     const myParagraph = `${paragraph}`;
     // splits up submitted text
@@ -106,7 +109,9 @@ export class Document extends Component {
                 <textarea name="paragraph_text" cols="50" rows="10"></textarea>
                 <div className="btn-container">
                   <input type="submit" name="submit" className="submit-save" />
-                  <button onClick={this.handleSave} className="submit-save">Save</button>
+                  <button onClick={this.handleSave} className="submit-save">
+                    Save
+                  </button>
                 </div>
               </div>
             </form>

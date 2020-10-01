@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import storageService from "../../services/storageService";
+import { getWordId } from "../../services/API";
 
 export class MyDocuments extends Component {
   state = {
@@ -41,12 +43,31 @@ export class MyDocuments extends Component {
     console.log(e.target.text);
   };
 
+  handleDelete = (e) => {
+    console.log("I ran handleDelete");
+    console.log(e.target.value);
+    var matchedName;
+    let listOfDocs = this.state.listOfDocs;
+    for (let i = 0; i < this.state.listOfDocs.length; i++) {
+      if (e.target.value === listOfDocs[i].name) {
+        console.log("We matched! " + listOfDocs[i].name);
+        console.log("We matched! " + listOfDocs[i].paragraph);
+        matchedName = {
+          id: listOfDocs[i].name,
+          paragraph: listOfDocs[i].paragraph,
+        };
+      }
+    }
+    const savedWord = matchedName;
+    storageService.deleteDoc(savedWord);
+    this.componentDidMount();
+  };
+
   render() {
     return (
       <div>
         <span className="title">Documents</span>
-        <p>Tada here are your list of words</p>
-        {/* {this.state.listOfDocs[0].name} */}
+        <p>Tada here are your list of Docs</p>
 
         <ul>
           {this.state.listOfDocs.map((word) => (
@@ -54,8 +75,17 @@ export class MyDocuments extends Component {
               <a href="" onClick={this.showDef} className="word">
                 {word.name}
                 <br />
-                {word.paragraph}
               </a>
+              {word.paragraph}
+              <br />
+              <button
+                type="Submit"
+                value={word.name}
+                onClick={this.handleDelete}
+                className="submit-save"
+              >
+                Delete
+              </button>
             </li>
           ))}
         </ul>

@@ -9,9 +9,74 @@ module.exports = {
   vocabList,
   savedDoc,
   docList,
+  deleteWord,
+  deleteDoc,
 };
 
 // make decode model and export it
+
+async function deleteDoc(req, res) {
+  console.log("I hit the savedWord function in express");
+  // console.log(JSON.stringify(req.body));
+  // console.log(
+  //   "this is the request headers" + JSON.stringify(req.headers.authorization)
+  // );
+  let token = req.headers.authorization;
+  var decoded = jwt.decode(token);
+  var decoded = jwt.decode(token, { complete: true });
+  console.log(decoded.payload.user.email);
+  const userEmail = decoded.payload.user.email;
+  const data = req.body;
+  const modelUser = await User.findOne({ email: userEmail });
+  console.log("this is the data " + data.id);
+  let name = data.id;
+  let nameStr = name.toString();
+  let paragraph = data.paragraph;
+  let nameIndex = modelUser.DocList.map((i) => i.name).indexOf(name);
+  modelUser.DocList = modelUser.DocList.filter(function (array) {
+    var x = data.id;
+    return array.name !== x;
+  });
+  // console.log("this is the modelUser " + modelUser);
+  // modelUser.DocList.push({
+  //   name: data.docName,
+  //   paragraph: data.paragraph[0],
+  // });
+  modelUser.save((error) => {
+    if (error) return error;
+    return res.send();
+  });
+  console.log("this is the overall user " + modelUser);
+  return res.json({ hello: "hello" });
+}
+
+async function deleteWord(req, res) {
+  console.log("I hit the deleteWord function in express");
+  console.log(JSON.stringify(req.body));
+  let token = req.headers.authorization;
+  var decoded = jwt.decode(token);
+  var decoded = jwt.decode(token, { complete: true });
+  console.log(decoded.payload.user.email);
+  const userEmail = decoded.payload.user.email;
+  const data = req.body;
+  const modelUser = await User.findOne({ email: userEmail });
+  console.log("this is the data " + data.id);
+  let name = data.id;
+  let nameStr = name.toString();
+  let definition = data.definition;
+  let nameIndex = modelUser.VocabList.map((i) => i.name).indexOf(name);
+  modelUser.VocabList = modelUser.VocabList.filter(function (array) {
+    var x = data.id;
+    return array.name !== x;
+  });
+
+  modelUser.save((error) => {
+    if (error) return error;
+    return res.send();
+  });
+  console.log("this is the overall user " + modelUser.VocabList);
+  return res.json(req.body);
+}
 
 async function docList(req, res) {
   console.log("i hit the DocList");
@@ -28,10 +93,10 @@ async function docList(req, res) {
 
 async function savedDoc(req, res) {
   console.log("I hit the savedWord function in express");
-  console.log(JSON.stringify(req.body));
-  console.log(
-    "this is the request headers" + JSON.stringify(req.headers.authorization)
-  );
+  // console.log(JSON.stringify(req.body));
+  // console.log(
+  //   "this is the request headers" + JSON.stringify(req.headers.authorization)
+  // );
   let token = req.headers.authorization;
   var decoded = jwt.decode(token);
   var decoded = jwt.decode(token, { complete: true });
@@ -40,16 +105,16 @@ async function savedDoc(req, res) {
   const data = req.body;
   const modelUser = await User.findOne({ email: userEmail });
   console.log("this is the modelUser " + modelUser);
+  console.log("this is the data paragraph " + data.textparagraph);
   modelUser.DocList.push({
     name: data.docName,
-    paragraph: data.paragraph[0],
+    paragraph: data.textparagraph,
   });
   modelUser.save((error) => {
     if (error) return error;
     return res.send();
   });
   console.log("this is the overall user " + modelUser);
-  console.log("this is the doclist array in users " + modelUser.DocList.name);
 
   return res.json(req.body);
 }
@@ -84,10 +149,6 @@ async function savedWord(req, res) {
   const modelUser = await User.findOne({ email: userEmail });
   console.log("this is the modelUser " + modelUser);
   modelUser.VocabList.push({ name: data.id, definition: data.definition[0] });
-  // modelUser.VocabList[0].name = data.id;
-  // modelUser.VocabList[0].definition = data.definition[0];
-  // modelUser.VocabList[1].name = data.id;
-  // modelUser.VocabList[1].definition = data.definition[0];
   modelUser.save((error) => {
     if (error) return error;
     return res.send();
@@ -96,17 +157,7 @@ async function savedWord(req, res) {
   console.log(
     "this is the vocablist array in users " + modelUser.VocabList[0].name
   );
-  // const newVocabWord = new User(data);
-  // newVocabWord.save((error) => {
-  //   if (error) {
-  //     console.log(error);
-  //     res.status(500).json({ msg: "There was an error saving your data" });
-  //   } else {
-  //     res.json({
-  //       msg: "Data was saved",
-  //     });
-  //   }
-  // });
+
   return res.json(req.body);
 }
 
