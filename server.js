@@ -73,10 +73,11 @@ app.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
-const port = process.env.PORT;
-
 // commented out to troubleshoot heroku error
-// const port = process.env.PORT || 3002;
+// const port = process.env.PORT;
+
+
+const port = process.env.PORT || 3002;
 
 app.listen(port, function () {
   console.log(`Express app running on port ${port}`);
