@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { getWordId } from "../../services/API";
 import storageService from "../../services/storageService";
+import Definition from "../Definition/Definition";
+import "./API";
 
 export class API extends Component {
   state = {
@@ -62,28 +64,66 @@ export class API extends Component {
   };
 
   render() {
-    return (
-      <div>
-        <div className="middle">
-          <span className="other-title">Search</span>
-          <form onSubmit={this.handleSubmit}>
-            <div>
-              <input
-                className="title-input"
-                type="text"
-                placeholder="search"
-                name="search"
-                onChange={this.handleChange}
-              />
-              <input type="submit" name="submit" className="submit-save"/>
+    {
+      if (this.props.user) {
+        return (
+          <div>
+            <div className="middle">
+              <span className="other-title">Search</span>
+              <form onSubmit={this.handleSubmit}>
+                <div>
+                  <input
+                    className="title-input"
+                    type="text"
+                    placeholder="search"
+                    name="search"
+                    onChange={this.handleChange}
+                  />
+                  <input type="submit" name="submit" className="submit-save" />
+                </div>
+              </form>
+              {this.state.id} <br />
+              <button onClick={this.handleSave} className="submit-save">
+                Save
+              </button>
             </div>
-          </form>
-          {this.state.id} <br />
-          <button onClick={this.handleSave} className="submit-save">Save</button>
-          {this.state.definition}
-        </div>
-      </div>
-    );
+            <div className="right-side">
+              <div className="def-container">
+                <span>{this.state.id}</span>
+                <Definition definition={this.state.definition} />
+              </div>
+            </div>
+          </div>
+        );
+      } else {
+        return (
+          <div>
+            <div className="middle">
+              <span className="other-title">Search</span>
+              <form onSubmit={this.handleSubmit}>
+                <div>
+                  <input
+                    className="title-input"
+                    type="text"
+                    placeholder="search"
+                    name="search"
+                    onChange={this.handleChange}
+                  />
+                  <input type="submit" name="submit" className="submit-save" />
+                </div>
+              </form>
+              {this.state.id} <br />
+            </div>
+            <div className="right-side">
+              <div className="def-container">
+                <span>{this.state.id}</span>
+                <Definition definition={this.state.definition} />
+              </div>
+            </div>
+          </div>
+        );
+      }
+    }
   }
 }
 

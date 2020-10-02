@@ -1,0 +1,11 @@
+.right-side {
+  min-width: 50%;
+}
+
+.def-container {
+  max-width: 90%;
+  margin-top: 13%;
+  background: white;
+  padding: 0.25em 0.5em 0.25em 0.5em;
+  border-radius: 10px;
+}
