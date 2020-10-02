@@ -1,68 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Wordify
 
-## Available Scripts
+Welcome to Wordify! This app is meant as an aid to all who are reading something dense, and find themselves reaching for a dictionary time and again.
 
-In the project directory, you can run:
+To get started, sign up an account, and navigate to our passage disply feature by clicking on the "Submit a passage" button in the nav bar. When you copy your passage into the document submission form and click submit, the passage text will render below the submission form. When any word from the passage is clicked, its first-listed definition will render on the right side of the page. No need to flip through the pages of your dictionary or tabs of your browser—do it all on a single page through the power of REACT!
 
-### `npm start`
+Don't want to lose the submitted text? Save it to your documents page, where you can access it for reference at any time. (At this stage in development, you will have to submit the text again in order to read it. Look out for improvements!)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+If you find yourself rendering the same word over and again, you might consider adding it to a study list—we have just the feature for you. Navigate to our API page by clicking on "Search" in the nav bar, then enter the word you have in mind. Upon submission, the definition will render, as well as the option to save the submitted word. Saved words will be accessible on your vocabulary list page. There you can also delete them.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+## Screenshots
+![Homepage](./screenshots/wordify-home.png)
+![Search result](./screenshots/wordify-search.png)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Technologies Used
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The MERN stack:
+- Mongoose
+- Express
+- React
+- Node
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
 
-### `npm run eject`
+[Heroku]
+[Trello](https://trello.com/b/Kj8vpi5z/wordify)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Next Steps
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- improve definition render so that sub-definitions are clearly specified
+- make "My Documents" a list of titles that click to render a document whose words can be clicked to render definitions as on "Submit a Passage"

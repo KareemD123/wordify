@@ -10,16 +10,6 @@
   font-size: 1.33em;
 }
 
-/* instead of using a stylesheet, use inline styling for
-a consistent distance from the right margin */
-.nav-link {
-  text-decoration: none;
-  /* position: relative;
-    left: 15vw; */
-  /* margin-left: 0.1em;
-    margin-right: 0.1em; */
-}
-
 .nav-item {
   text-decoration: none;
   color: #271c16;
@@ -47,4 +37,14 @@ a consistent distance from the right margin */
   width: 10%;
   border: none;
   border-top: 1px solid #271c16;
+}
+
+/* instead of using a stylesheet, use inline styling for
+a consistent distance from the right margin */
+.nav-link {
+  text-decoration: none;
+  /* position: relative;
+    left: 15vw; */
+  /* margin-left: 0.1em;
+    margin-right: 0.1em; */
 }
