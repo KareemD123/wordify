@@ -4,7 +4,6 @@ const favicon = require("serve-favicon");
 const logger = require("morgan");
 require("./config/database");
 require("dotenv").config();
-const bodyParser = require("body-Parser");
 // const passport = require("passport");
 const cookieSession = require("cookie-session");
 
@@ -26,7 +25,6 @@ app.post("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-app.use(bodyParser.json());
 app.use(
   cookieSession({
     name: "wordify",
@@ -75,7 +73,6 @@ app.get("/logout", (req, res) => {
 
 // commented out to troubleshoot heroku error
 // const port = process.env.PORT;
-
 
 const port = process.env.PORT || 3002;
 
