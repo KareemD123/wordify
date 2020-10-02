@@ -7,9 +7,9 @@ const NavBar = (props) => {
   let nav = props.user ? (
     <div className="nav-header">
       <div>
-        <a href="/">
+        <Link to="/" className="nav-link">
           <span className="title">Wordify</span>
-        </a>
+        </Link>
         <span className="welcome">Welcome, {props.user.name}.</span>
       </div>
       <hr />
@@ -38,9 +38,9 @@ const NavBar = (props) => {
     </div>
   ) : (
     <div className="nav-header">
-      <a href="/">
-        <span className="title">Wordify</span>
-      </a>
+      <Link to="/" className="nav-link">
+          <span className="title">Wordify</span>
+      </Link>
       <hr />
       <div className="nav-bar">
         <Link to="/API" className="nav-link">
