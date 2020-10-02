@@ -1,101 +1,50 @@
-/* vertical nav display */
-/* .headline {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-
-.title {
-    font-size: 60px;
-    font-weight: 2em;
-}
-
 .nav-bar {
-    display: flex;
-    flex-direction: column;
-    width: 225px;
-}
-
-.nav-link {
-    text-decoration: none;
-    text-align: center;
-}
-
-.nav-item {
-    text-decoration: none;
-    color: black;
-}
-
-.nav-item:hover {
-    text-decoration: underline;
-}
-
-.title-rule {
-    width: 80%;
-    border: none;
-    border-top: 1px solid black;
-}
-
-.nav-rule {
-    width: 10%;
-    border: none;
-    border-top: 1px solid black;
-} */
-
-/* horizontal nav display */
-/* .headline {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-} */
-
-/* .nav-header {
-    position: absolute;
-} */
-
-.nav-bar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 0.15em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.15em;
 }
 
 .welcome {
-    margin-left: 20px;
-    font-size: 1.33em;
+  margin-left: 20px;
+  font-size: 1.33em;
 }
 
 /* instead of using a stylesheet, use inline styling for
 a consistent distance from the right margin */
 .nav-link {
-    text-decoration: none;
-    /* position: relative;
+  text-decoration: none;
+  /* position: relative;
     left: 15vw; */
-    /* margin-left: 0.1em;
+  /* margin-left: 0.1em;
     margin-right: 0.1em; */
 }
 
 .nav-item {
-    text-decoration: none;
-    color: #271C16;
-    font-size: 1.17em;
+  text-decoration: none;
+  color: #271c16;
+  font-size: 1.17em;
 }
 
 .nav-item:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+}
+
+.title {
+  color: black;
+  text-decoration: none;
+  font-size: 2.8em;
+  font-weight: 2em;
 }
 
 .title-rule {
-    width: 100%;
-    border: none;
-    border-top: 1px solid #271C16;
+  width: 100%;
+  border: none;
+  border-top: 1px solid #271c16;
 }
 
 .nav-rule {
-    width: 10%;
-    border: none;
-    border-top: 1px solid #271C16;
+  width: 10%;
+  border: none;
+  border-top: 1px solid #271c16;
 }

@@ -1,17 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Nav.css";
+import Definition from "../Definition/Definition";
 
 const NavBar = (props) => {
   let nav = props.user ? (
     <div className="nav-header">
       <div>
-        <span className="title">Wordify</span>
+        <a href="/">
+          <span className="title">Wordify</span>
+        </a>
         <span className="welcome">Welcome, {props.user.name}.</span>
-        </div>
+      </div>
       <hr />
       <div className="nav-bar">
-        <Link to="/" className="nav-link">
+        <Link to="/VocabList" className="nav-link">
           <span className="nav-item">My vocabulary list</span>
         </Link>
         <span>&#167;</span>
@@ -35,9 +38,11 @@ const NavBar = (props) => {
     </div>
   ) : (
     <div className="nav-header">
-      <div className="title">Wordify</div>
+      <a href="/">
+        <span className="title">Wordify</span>
+      </a>
       <hr />
-        <div className="nav-bar">
+      <div className="nav-bar">
         <Link to="/API" className="nav-link">
           <span className="nav-item">Search for a word</span>
         </Link>

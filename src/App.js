@@ -36,10 +36,15 @@ class App extends Component {
       <div className="App">
         <Nav user={this.state.user} handleLogout={this.handleLogout} />
         <Switch>
-          <Route exact path="/" render={() => <VocabList />} />
+          <Route exact path="/" render={() => <Home />} />
+          <Route exact path="/VocabList" render={() => <VocabList />} />
           <Route exact path="/MyDocuments" render={() => <MyDocuments />} />
           <Route exact path="/Document" render={() => <Document />} />
-          <Route exact path="/API" render={() => <API />} />
+          <Route
+            exact
+            path="/API"
+            render={() => <API user={this.state.user} />}
+          />
           <Route exact path="/home" render={() => <Home />} />
           <Route
             exact
