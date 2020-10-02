@@ -18,25 +18,27 @@ body {
 } */
 
 /* App at 1024px width */
-@media screen and (min-width: 1024px) {
-  .App {
-    display: flex;
-    flex-direction: column;
-    color: #271C16;
-    max-width: 1024px;
-    margin: 0 auto;
-  }
+@media screen and (min-width: 875px) {
+  
+}
 
-  .app-header {
-    max-width: 100%;
-  }
+.App {
+  display: flex;
+  flex-direction: column;
+  color: #271C16;
+  max-width: 80%;
+  margin: 0 auto;
+}
 
-  .container {
-    max-width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
+.app-header {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .title {
