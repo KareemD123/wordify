@@ -1,25 +1,15 @@
 
-
 .word {
     text-decoration: none;
-    color: ##412F25;
+    color: #412F25;
   }
   
 .word:hover {
     text-decoration: underline;
 }
 
-.left-side {
-  min-width: 50%;
-}
-
-.right-side {
-  min-width: 50%;
-}
-
 .form-container {
   max-width: 80%;
-  /* margin: auto; */
 }
 
 .def-container {

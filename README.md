@@ -2,7 +2,7 @@
 
 Welcome to Wordify! This app is meant as an aid to all who are reading something dense, and find themselves reaching for a dictionary time and again.
 
-We're most proud of our passage display feature. When you copy your passage into the document submission form and click submit, the passage text will render below the submission form. When any word from the passage is clicked, its first-listed definition will render on the right side of the page. No need to flip through the pages of your dictionary or tabs of your browser—do it all on a single page through the power of REACT!
+To get started, sign up an account, and navigate to our passage disply feature by clicking on the "Submit a passage" button in the nav bar. When you copy your passage into the document submission form and click submit, the passage text will render below the submission form. When any word from the passage is clicked, its first-listed definition will render on the right side of the page. No need to flip through the pages of your dictionary or tabs of your browser—do it all on a single page through the power of REACT!
 
 Don't want to lose the submitted text? Save it to your documents page, where you can access it for reference at any time. (At this stage in development, you will have to submit the text again in order to read it. Look out for improvements!)
 
