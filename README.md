@@ -8,7 +8,11 @@ Don't want to lose the submitted text? Save it to your documents page, where you
 
 If you find yourself rendering the same word over and again, you might consider adding it to a study list—we have just the feature for you. Navigate to our API page by clicking on "Search" in the nav bar, then enter the word you have in mind. Upon submission, the definition will render, as well as the option to save the submitted word. Saved words will be accessible on your vocabulary list page. There you can also delete them.
 
+
 ## Screenshots
+![Homepage](./screenshots/wordify-home.png)
+![Search result](./screenshots/wordify-search.png)
+
 
 ## Technologies Used
 
@@ -18,9 +22,14 @@ The MERN stack:
 - React
 - Node
 
+
 ## Getting Started
-Heroku
-Trello
+
+[Heroku]
+[Trello](https://trello.com/b/Kj8vpi5z/wordify)
 
 
 ## Next Steps
+
+- improve definition render so that sub-definitions are clearly specified
+- make "My Documents" a list of titles that click to render a document whose words can be clicked to render definitions as on "Submit a Passage"

@@ -67,8 +67,8 @@ export class API extends Component {
     {
       if (this.props.user) {
         return (
-          <div>
-            <div className="middle">
+          <div className="container">
+            <div className="left-side">
               <span className="other-title">Search</span>
               <form onSubmit={this.handleSubmit}>
                 <div>
@@ -97,8 +97,8 @@ export class API extends Component {
         );
       } else {
         return (
-          <div>
-            <div className="middle">
+          <div className="container">
+            <div className="left-side">
               <span className="other-title">Search</span>
               <form onSubmit={this.handleSubmit}>
                 <div>
