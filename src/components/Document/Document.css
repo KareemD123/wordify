@@ -19,12 +19,12 @@
 
 .form-container {
   max-width: 80%;
-  margin: auto;
+  /* margin: auto; */
 }
 
 .def-container {
   max-width: 90%;
-  margin: 13% auto;
+  margin-top: 13%;
   background: white;
   padding: 0.25em 0.5em 0.25em 0.5em;
   border-radius: 10px;
