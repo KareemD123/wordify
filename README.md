@@ -25,7 +25,7 @@ The MERN stack:
 
 ## Getting Started
 
-[Heroku]
+[Heroku](https://wordify123.herokuapp.com/)
 [Trello](https://trello.com/b/Kj8vpi5z/wordify)
 
 
